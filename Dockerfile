@@ -106,7 +106,8 @@ COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 
 # Copy workspace persona files so entrypoint.sh can place them in /data/workspace
-COPY SOUL.md AGENTS.md ./
+COPY SOUL.md AGENTS.md identity.md ./
+
 # Create openclaw user, set up directories, install Homebrew as that user
 RUN useradd -m -s /bin/bash openclaw \
   && chown -R openclaw:openclaw /app \
